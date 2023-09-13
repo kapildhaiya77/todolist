@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <div id="clock" style="font-size: 24px; text-align: center;"></div>
+    <h1>Todo List</h1>
+   
+    <input type="text" id="task" placeholder="Task description">
+    <select id="category">
+      <option value="Personal">Personal</option>
+      <option value="Work">Work</option>
+      <option value="Fitness">Fitness</option>
+      
+    </select>
+    <input type="date" id="date">
+    <button onclick="addTask()">Add Task</button>
+    
+    <h2>Tasks</h2>
+    <div class="filter-container">
+      <div class="filter-group">
+        <label>Category:</label>               
+        <select id="filterCategory" onchange="filterTasks()">
+          <option value="All">All</option>
+          <option value="Personal">Personal</option>
+          <option value="Work">Work</option>
+          <option value="Fitness">Fitness</option>
+         
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>From:</label>
+        <input type="date" id="filterFromDate">
+      </div>
+      <div class="filter-group">
+        <label>To:</label>
+        <input type="date" id="filterToDate">
+      </div>
+      <div class="filter-group">
+        <label>Search:</label>
+        <input type="text" id="filterSearch" oninput="filterTasks()">
+        <button id="voiceSearchButton">Voice Search</button>
+
+      </div>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
